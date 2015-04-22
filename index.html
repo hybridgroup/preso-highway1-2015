@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Full Stack Robotics - Fluent 2015</title>
+    <title>How To Open Your Startup</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
@@ -40,7 +40,7 @@
       <div class="slides">
         <section>
           <section>
-            <h1>Full Stack Robotics</h1>
+            <h1>How To Open Your Startup</h1>
             <h3>hybridgroup.com</h3>
           </section>
           <section>
@@ -49,11 +49,11 @@
         </section>
 
         <section>
-          <h2>Good Afternoon</h2>
+          <h2>Good Morning</h2>
         </section>
 
         <section>
-          <h2>This is #fluentconf</h2>
+          <h2>This is @highway1_io</h2>
         </section>
 
         <section>
@@ -89,633 +89,173 @@
         </section>
 
         <section>
-          <h2>Full Stack Robotics</h2>
-        </section>
-
-        <section data-background="images/robot-pancakes.gif">
-          <h2>Full Stack Robotics?</h2>
-        </section>
-
-        <section>
-          <div class="image-container">
-            <img src="images/diagram-solution-of-things.png">
-          </div>
-        </section>
-
-        <section>
-          <h2>Starring</h2>
           <div class="image-container">
             <img src="images/cylonjs-logo.png">
           </div>
         </section>
 
         <section>
-          <div class="image-container">
-            <img src="images/arch-1.png">
-          </div>
+          <h2>How (and why) to be more open</h2>
+        </section>
+
+        <section data-background="images/hugs.jpg">
+          <h2>&lt;3</h2>
+        </section>
+
+        <section data-background="images/thief.jpg">
+          <h2>?!</h2>
         </section>
 
         <section>
-          <div class="image-container">
-            <img src="images/arch-2.png">
-          </div>
-        </section>
-
-        <section>
           <section>
-            <h2>Arduino</h2>
+            <h2>Advantages To Openness</h2>
           </section>
 
           <section>
-            <pre><code data-trim>
-var Cylon = require("cylon");
-
-Cylon.robot({
-  connections: {
-    arduino: { adaptor: "firmata", port: "/dev/ttyACM0" }
-  },
-
-  devices: {
-    led: { driver: "led", pin: 13 }
-  },
-
-  work: function(my) {
-    every((1).second(), my.led.toggle);
-  }
-}).start();
-            </code></pre>
+            <h2>Time to market</h2>
           </section>
 
           <section>
-            <img src="http://localhost:8080/?action=stream">  
+            <h2>Reduce costs</h2>
+          </section>
+
+          <section>
+            <h2>Publicity</h2>
+          </section>
+
+          <section>
+            <h2>New markets</h2>
+          </section>
+
+          <section>
+            <h2>Outside-in Innovation</h2>
           </section>
         </section>
 
         <section>
           <section>
-            <h2>Beaglebone Black</h2>
+            <h2>Types of Openness</h2>
           </section>
 
           <section>
-            <pre><code data-trim>
-var Cylon = require("cylon");
-
-Cylon.robot({
-  connections: {
-    beaglebone: { adaptor: "beaglebone" }
-  },
-
-  devices: {
-    led: { driver: "led", pin: "P9_12" }
-  },
-
-  work: function(my) {
-    every((1).second(), my.led.toggle);
-  }
-}).start();
-            </code></pre>
+            <h2>Interfaces</h2>
           </section>
 
           <section>
-            <img src="http://localhost:8080/?action=stream">  
-          </section>          
-        </section>
-
-        <section>
-          <h2>Front Ends and Human Interfaces</h2>
-        </section>
-
-        <section>
-          <h2>Common Protocol for Programming Physical Input/Output</h2>
-          <h3>cppp.io</h3>
-        </section>
-
-        <section>
-          <div class="image-container">
-            <img src="images/commander-logo.png">
-          </div>
-          <h3>commander.io</h3>
-        </section>
-
-        <section>
-          <div class="image-container">
-            <img src="images/phonegap-logo.png">
-          </div>
-        </section>
-
-        <section>
-          <div class="image-container">
-            <img src="images/ionic-logo.svg">
-          </div>
-        </section>
-
-
-        <section>
-          <div class="image-container">
-            <img src="images/robeaux-logo.png">
-          </div>
-          <h3>robeaux.io</h3>
-        </section>
-
-        <section>
-          <div class="image-container">
-            <img src="images/react-logo.png">
-          </div>
-        </section>
-
-        <section>
-          <div class="image-container">
-            <img src="images/babel-logo.png">
-          </div>
-        </section>
-
-        <section>
-          <section>
-            <h2>Sphero + Commander + Robeaux</h2>
-          </section>
-
-          <section>
-            <pre><code data-trim>
-var cylon = require('cylon');
- 
-cylon.api('http',{
-  host: '0.0.0.0',
-  port: '8080',
-  ssl:  false
-});
- 
-cylon.robot({
-  name: 'sphero-dpad',
-  connections: { 
-    sphero: { adaptor: 'sphero', port: '/dev/rfcomm2' } 
-  },
-  devices: { 
-    sphero: { driver: 'sphero' } 
-  },
-  work: function() {
-    var that = this;
-    that.sphero.detectCollisions();
-    that.sphero.setColor("white");
-  },
-  commands: function() {
-    var that = this;
-    return {
-      move: function(direction) {
-        var heading = 0;
- 
-        switch (direction) {
-          case "up":
-            heading = 0;
-            break;
-          case "down":
-            heading = 180;
-            break;
-          case "left":
-            heading = 270;
-            break;
-          case "right":
-            heading = 90;
-            break;
-        }
- 
-        that.sphero.roll(100, heading);
- 
-        setTimeout(function() {
-          that.sphero.stop();
-        }, 500);
-      },
-      change_color: function(color) {
-        that.sphero.setColor(color);
-      }
-    };
-  }
-}).start();
-            </code></pre>
-          </section>
-
-          <section>
-            <a target="_blank" href="http://192.168.1.3:8080">Robeaux Demo</a>
-          </section>
-
-          <section>
-            <img src="http://localhost:8080/?action=stream">  
+            <h2>Implementations</h2>
           </section>
         </section>
 
         <section>
           <section>
-            <h2>Choose Your Own Hardware Adventure!</h2>
+            <h2>Degrees of Openness</h2>
           </section>
 
           <section>
-            <h2>To win a Sphero, tweet</h2>
-            <h2>@gosphero and @cylonjs</h2>
+            <h2>Open</h2>
           </section>
 
           <section>
-            <h2>To win a Spark Core, tweet</h2>
-            <h2>@spark_io and @cylonjs</h2>
+            <h2>Semi-open</h2>
+          </section>
+
+          <section>
+            <h2>Closed</h2>
           </section>
         </section>
 
         <section>
-          <h2>Time to get real...</h2>
+          <section>
+            <h2>Examples - Drones</h2>
+          </section>
+
+          <section>
+            <h2>Parrot</h2>
+          </section>
+
+          <section>
+            <h2>DJI</h2>
+          </section>
+
+          <section>
+            <h2>3D Robotics</h2>
+          </section>
         </section>
 
         <section>
           <section>
-            <h2>Brewmachine</h2>
+            <h2>Examples - HW Platforms</h2>
           </section>
 
           <section>
-            <div class="image-container">
-              <img src="images/diagram-connected.jpg">
-            </div>
+            <h2>Raspberry Pi</h2>
+          </section>
+
+          <section>
+            <h2>Intel Edison</h2>
+          </section>
+
+          <section>
+            <h2>Spark Devices</h2>
           </section>
         </section>
 
         <section>
-          <h2>MQTT</h2>
-          <h3>mqtt.org</h3>
+          <section>
+            <h2>Examples - Wearables</h2>
+          </section>
+
+          <section>
+            <h2>Pebble</h2>
+          </section>
+
+          <section>
+            <h2>Apple Watch</h2>
+          </section>
+
+          <section>
+            <h2>Pi</h2>
+          </section>
         </section>
 
         <section>
           <section>
-            <h2>Drink Dispenser</h2>
-            <h3>Intel Edison + MQTT</h3>
+            <h2>Tactics For Openness</h2>
           </section>
 
           <section>
-            <div class="image-container">
-              <img src="images/diagram-connected1.jpg">
-            </div>
+            <h2>Develop your API first</h2>
           </section>
 
           <section>
-            <pre><code data-trim>
-var cylon = require('cylon');
- 
-cylon.robot({
-  name: "brewer",
-  connections: {
-    edison: { adaptor: 'intel-iot' },
-    mqtt:   { adaptor: 'mqtt', host: 'tcp://127.0.0.1:1883' }
-  },
-  devices: {
-    lever: { driver: 'button',     pin: 2,  connection: 'edison' },
-    fault: { driver: 'button',     pin: 4,  connection: 'edison' },
-    pump:  { driver: 'direct-pin', pin: 13, connection: 'edison' },
-    start_pump: { driver: 'mqtt', topic: 'start_pump', connection: 'mqtt' },
-    start_fault: { driver: 'mqtt', topic: 'start_fault', connection: 'mqtt' }
-  },
-  work: function() {
-    var that = this,
-        pumping = false,
-        served = 0,
-        dgram = {
-          name: "Four",
-          event: "online",
-          details: "dispenser",
-          drink_id: 0,
-          dispenser_id: 4
-        };
- 
-    that.lever.on('push', function() {
-      console.log('lever');
-      that.mqtt.publish('start_pump'); 
-    });
- 
-    that.fault.on('push', function() {
-      console.log('fault');
-      that.mqtt.publish('start_fault');
-    });
-
-    that.start_pump.on('message', function(data) {
-      if (!pumping) {
-        pumping = true;
-        that.pump.digitalWrite(1)
-        dgram.drink_id++
-        dgram.event = "online";
-        that.mqtt.publish('pumped', JSON.stringify(dgram));
-        setTimeout(function() {
-          that.pump.digitalWrite(0);
-          pumping = false;
-        }, 2000);
-      }
-    });
- 
-    that.start_fault.on('message', function(data) {
-      dgram.event = 'error';
-      that.mqtt.publish('fault', JSON.stringify(dgram));
-    }); 
-  }
-}).start();
-            </code></pre>
+            <h2>Dogfooding</h2>
           </section>
 
           <section>
-            <img src="http://localhost:8080/?action=stream">  
-          </section>
-         <section>
-            <a target="_blank" href="http://brewmachine.herokuapp.com">Brewmachine site</a>
-          </section>          
-        </section>
- 
-        <section>
-          <section>
-            <h2>Wearable Notifications</h2>
-            <h3>Intel Edison + Pebble + MQTT</h3>
+            <h2>Look for standards</h2>
           </section>
 
           <section>
-            <h2>watchbot.io</h2>
+            <h2>Provide SDKs</h2>
           </section>
 
           <section>
-            <div class="image-container">
-              <img src="images/diagram-connected2.jpg">
-            </div>
-          </section>
-
-          <section>
-            <pre><code data-trim>
-var cylon = require('cylon'),
-    request = require('request');
- 
-cylon.api({
-  host: "0.0.0.0",
-  port: "8080",
-  ssl: false
-});
- 
-cylon.robot({
-  name: 'hq',
-  connections: {
-    mqtt:   { adaptor: 'mqtt', host: 'tcp://127.0.0.1:1883' },
-    pebble: { adaptor: 'pebble' } 
-  },
-  devices: {
-    gcs:    { driver: 'mqtt', topic: 'gcs',    connection: 'mqtt' },
-    pump:   { driver: 'mqtt', topic: 'pump',   connection: 'mqtt' },
-    fault:  { driver: 'mqtt', topic: 'fault',  connection: 'mqtt' }, 
-    drone:  { driver: 'mqtt', topic: 'drone',  connection: 'mqtt' }, 
-    pumped: { driver: 'mqtt', topic: 'pumped', connection: 'mqtt' },
-    pebble: { driver: 'pebble', connection: 'pebble' }
-  },
-  commands: function() {
-    var that = this;
-    return {
-      pump: function() {
-        that.mqtt.publish("start_pump");
-      },
-      fault: function() {
-        that.mqtt.publish("start_fault");
-      }
-    };
-  },
-  work: function() {
-    var that = this,
-        brewmachine = "https://brewmachine.herokuapp.com/drinks";
- 
-    that.pump.on("message", function(data) {
-      that.mqtt.publish("start_pump");
-    });
- 
-    that.pumped.on("message", function(data) {
-      request.post(brewmachine, { form: JSON.parse(data) });
-      that.pebble.send_notification("Customers served: " + JSON.parse(data).drink_id);
-      console.log("Customers served: " + JSON.parse(data).drink_id);
-    });
- 
-    that.fault.on("message", function(data) {
-      request.post(brewmachine, { form: JSON.parse(data) });
-      that.pebble.send_notification("There was a fault!");
-      console.log("There was a fault!");
-    });
- 
-    that.drone.on("message", function(data) {
-      request.post(brewmachine, { form: JSON.parse(data) });
-      that.pebble.send_notification("Message from drone: " + data.toString());
-      console.log("Message from drone: " + data.toString());
-    });
- 
-    that.gcs.on("message", function(data) {
-      request.post(brewmachine, { form: JSON.parse(data) });
-      console.log(data.toString());
-    });
-  }
-}).start();
-            </code></pre>
-          </section>
-
-          <section>
-            <img src="http://localhost:8080/?action=stream">  
+            <h2>Stay humble</h2>
           </section>
         </section>
 
-
-
         <section>
-          <section>
-            <h2>Mobile Control</h2>
-            <h3>Intel Edison + Pebble + Commander + MQTT</h3>
-          </section>
-
-          <section>
-            <div class="image-container">
-              <img src="images/diagram-connected3.jpg">
-            </div>
-          </section>
-
-          <section>
-            <pre><code data-trim>
-...
-  commands: function() {
-    var that = this;
-    return {
-      pump: function() {
-        that.mqtt.publish("start_pump");
-      },
-      fault: function() {
-        that.mqtt.publish("start_fault");
-      }
-    };
-  },
-...
-            </code></pre>
-          </section>
-
-          <section>
-            <img src="http://localhost:8080/?action=stream">  
-          </section>
-        </section>
-
-
-        <section>
-          <section>
-            <h2>Drone Delivery</h2>
-            <h3>Intel Edison + MQTT + ARDrone + Commander + Pebble</h3>
-          </section>
-
-          <section>
-            <div class="image-container">
-              <img src="images/diagram-connected.jpg">
-            </div>
-          </section>
-
-          <section>
-            <pre><code data-trim>
-var cylon = require("cylon");
-
-cylon.robot({
-  name: "gcs",
-  connections: {
-    joystick: { adaptor: "joystick" },
-    ardrone:  { adaptor: 'rolling-spider', uuid: '276ca7b527984c289e72c5f0daf9ddfa'},
-    mqtt:     { adaptor: "mqtt", host: "tcp://192.168.1.3:1883" }
-  },
-  devices: {
-    controller: { driver: "dualshock-3", connection: "joystick" },
-    drone:      { driver: "rolling-spider", connection: "ardrone" }
-  },
-  work: function() {
-    var that = this;
-        rightStick = { x: 0.0, y: 0.0 },
-        leftStick = { x: 0.0, y: 0.0 },
-        dgram = {
-          name:         "gcs",
-          dispenser_id: 34,
-          drink_id:     0,
-          event:        "available",
-          details:      "drone",
-        };
-
-    that.drone.trim();
-    that.mqtt.publish("gcs", JSON.stringify(dgram));
-
-    that.controller.on("circle:press", function() {
-      that.drone.frontFlip();
-      dgram.event = "delivery complete";
-      console.log(dgram);
-      that.mqtt.publish("gcs", JSON.stringify(dgram));
-    });
-
-    that.controller.on("square:press", function() {
-      that.drone.takeOff();
-      dgram.event = "en route";
-      console.log(dgram);
-      that.mqtt.publish("gcs", JSON.stringify(dgram));
-    });
-
-    that.controller.on("triangle:press", function() {
-      that.drone.hover();
-    });
-
-    that.controller.on("x:press", function() {
-      that.drone.land();
-      dgram.event = "available";
-      console.log(dgram);
-      that.mqtt.publish("gcs", JSON.stringify(dgram));
-    });
-
-    that.controller.on("right_x:move", function(data) {
-      rightStick.x = data;
-    });
-
-    that.controller.on("right_y:move", function(data) {
-      rightStick.y = data;
-    });
-
-    that.controller.on("left_x:move", function(data) {
-      leftStick.x = data;
-    });
-
-    that.controller.on("left_y:move", function(data) {
-      leftStick.y = data;
-    });
-
-    setInterval(function() {
-      var pair = leftStick;
-
-      if (pair.y < 0) {
-        that.drone.forward(validatePitch(pair.y));
-      } else if (pair.y > 0) {
-        that.drone.backward(validatePitch(pair.y));
-      }
-
-      if (pair.x > 0) {
-        that.drone.right(validatePitch(pair.x));
-      } else if (pair.x < 0) {
-        that.drone.left(validatePitch(pair.x));
-      }
-    }, 0);
-
-    setInterval(function() {
-      var pair = rightStick;
-
-      if (pair.y < 0) {
-        that.drone.up(validatePitch(pair.y));
-      } else if (pair.y > 0) {
-        that.drone.down(validatePitch(pair.y));
-      }
-
-      if (pair.x > 0) {
-        that.drone.clockwise(validatePitch(pair.x));
-      } else if (pair.x < 0) {
-        that.drone.counterClockwise(validatePitch(pair.x));
-      }
-    }, 0);
-
-    setInterval(function() {
-      that.drone.hover();
-    }, 10);
-  }
-}).start();
-
-function validatePitch(data) {
-  var value = Math.abs(data);
-  if (value >= 0.1) {
-    if (value <= 1.0) {
-      return (Math.round(value * 100.0) / 100.0) * 100;
-    } else {
-      return 1.0 * 100;
-    }
-  } else {
-    return 0.0;
-  }
-}
-            </code></pre>
-          </section>
-
-          <section>
-            <img src="http://localhost:8080/?action=stream">  
-          </section>
-        </section>
-
-
-        <section>
-          <h2>Was that fun?</h2>
-        </section>
-
-        <section>
-          <h2>Join the Robot Evolution!</h2>
-        </section>
-
-        <section>
-          <h2>commander.io</h2>
-        </section>
-
-        <section>
-          <h2>robeaux.io</h2>
-        </section>
-
-        <section>
-          <h2>watchbot.io</h2>
+          <h2>We are here to help</h2>
         </section>
 
         <section>
           <h2>cylonjs.com</h2>
           <h3>@cylonjs</h3>
+        </section>
+
+        <section>
+          <h2>hybridgroup.com</h2>
+          <h3>@hybrid_group</h3>
         </section>
 
         <section>
