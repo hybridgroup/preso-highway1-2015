@@ -1,5 +1,5 @@
-# Full Stack Robotics
+# How To Open Your Startup
 
-## Presentation at Fluent 2015
+## Presentation at Highway1 - Apr. 2015
 
 Copyright (C) 2014-2015 The Hybrid Group
